@@ -49,9 +49,10 @@
 //     })
 
 let getCountries=()=>{
+    
     $.ajax({
                 url: 'http://localhost:8000/countries',
-                success: function (data, statuts, response) {
+                success:  (data, statuts, response)=> {
         
                      for (var i = 0; i < data.length; i++) {
                     console.log(data[i])
@@ -65,9 +66,36 @@ let getCountries=()=>{
 
 }
 
-$("#btnShowCountries").click(function () {
+$("#btnShowCountries").click( ()=> {
 
         getCountries()
 
        
     })
+
+
+
+    let getCapital=()=>{
+    
+        $.ajax({
+                    url: 'http://localhost:8000/countries/[countries_name]/capital',
+                    success:  (data, statuts, response)=> {
+            
+                         for (var i = 0; i < data.length; i++) {
+                        console.log(data[i])
+                        $("ul").append(`<li>${data[i]}</li>`)
+                        
+            
+                    };
+            
+                    }
+                 })
+    
+    }
+    
+    $("#btnShowCountries").click( ()=> {
+    
+            getCountries()
+    
+           
+        })
