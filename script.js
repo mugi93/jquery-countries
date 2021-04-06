@@ -20,31 +20,54 @@
 
 
 
-function getCountries() {
+// function getCountries() {
 
+//     $.ajax({
+//         url: 'http://localhost:8000/countries',
+//         success: function (data, statuts, response) {
+
+//              for (var i = 0; i < data.length; i++) {
+//             console.log(data[i])
+//             $("ul").append(`<li>${data[i]}</li>`)
+            
+
+//         };
+
+//         }
+//      })
+    
+
+    
+    
+// }
+
+// $("#btnShowCountries").click(function () {
+
+//         getCountries()
+
+       
+//     })
+
+let getCountries=()=>{
     $.ajax({
-        url: 'http://localhost:8000/countries',
-        success: function (data, statuts, response) {
+                url: 'http://localhost:8000/countries',
+                success: function (data, statuts, response) {
+        
+                     for (var i = 0; i < data.length; i++) {
+                    console.log(data[i])
+                    $("ul").append(`<li>${data[i]}</li>`)
+                    
+        
+                };
+        
+                }
+             })
 
-            console.log(data)
-
-
+}
 
 $("#btnShowCountries").click(function () {
 
-    getCountries()
+        getCountries()
 
-    for (var i = 0; i < data.length; i++) {
-        console.log(data[i])
-        $("ul").append(`<li>${data[i]}</li>`)
-
-    };
-})
-
-        }
-
-
+       
     })
-}
-
-
